@@ -1,0 +1,177 @@
+:root {
+    --brand-accent: #db0011; 
+    --bg-premium: #ffffff;    
+    --text-main: #333333;
+    --gold-gradient: linear-gradient(135deg, #db0011 0%, #ff4d4d 100%);
+    --premium-border: linear-gradient(to right, #db0011, #9c000c, #db0011);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+body { background-color: #f4f4f4; font-family: 'Montserrat', sans-serif; color: var(--text-main); overflow: hidden; width: 100vw; height: 100vh; }
+
+.audio-toggle { position: fixed; top: 15px; left: 15px; z-index: 7000; background: rgba(0,0,0,0.8); border: 1px solid var(--brand-accent); color: var(--brand-accent); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+
+.main-hub { height: 100vh; padding: 10px; display: flex; flex-direction: column; align-items: center; overflow-y: auto; background: #fff; }
+
+.magazine-header { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 10px 5px 10px 55px; border-bottom: 2px solid var(--brand-accent); margin-bottom: 15px; }
+.agency-name { font-family: 'Bebas Neue'; font-size: 1.4rem; color: #333; letter-spacing: 1px; }
+.agency-logo { width: 45px; }
+
+.header-logo-galeria {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.header-logo-galeria img {
+    width: 60px;
+    filter: drop-shadow(0 0 5px rgba(0,0,0,0.5));
+}
+
+.mosaic-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 12px; width: 100%; max-width: 380px; }
+
+.hero-block { grid-column: 1 / -1; height: 200px; position: relative; border-radius: 15px; overflow: hidden; border: 1px solid #ddd; } 
+.hero-block img { width: 100%; height: 100%; object-fit: cover; }
+.hero-overlay { position: absolute; bottom: 0; left: 0; width: 100%; background: linear-gradient(transparent, rgba(0,0,0,0.8)); padding: 15px; color: #fff; }
+.edition-label { font-size: 0.7rem; color: var(--brand-accent); font-weight: 900; }
+.hero-title { font-family: 'Montserrat'; font-weight: 900; font-size: 1.8rem; line-height: 1; }
+
+.video-block { grid-column: 2; grid-row: 2 / 4; background: #f9f9f9; border-radius: 12px; padding: 8px; display: flex; flex-direction: column; gap: 8px; border: 1px solid #ddd; }
+.video-preview { position: relative; flex: 1; border-radius: 8px; overflow: hidden; }
+.video-preview img { width: 100%; height: 100%; object-fit: cover; }
+.yt-play-mini { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.1); color: #db0011; font-size: 2.5rem; }
+.block-label { font-family: 'Bebas Neue'; font-size: 0.75rem; text-align: center; color: #333; }
+
+.lead-block { grid-column: 1; grid-row: 2; }
+.btn-shiny-gold { width: 100%; height: 65px; border-radius: 12px; border: none; background: var(--gold-gradient); color: #fff; font-weight: 900; font-size: 0.8rem; line-height: 1.1; position: relative; overflow: hidden; }
+
+.share-block { grid-column: 1; grid-row: 3; }
+.btn-magazine-share { width: 100%; height: 45px; background: #333; border: none; color: #fff; border-radius: 12px; font-weight: 800; font-size: 0.7rem; }
+
+.menu-block { grid-column: 1 / -1; margin-top: 5px; }
+.magazine-menu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.mag-btn { background: #fff; border: 1.5px solid #eee; color: #333; padding: 15px; border-radius: 10px; text-align: left; font-family: 'Bebas Neue'; font-size: 1rem; display: flex; align-items: center; gap: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+.mag-btn .num { color: var(--brand-accent); font-weight: 900; font-size: 0.9rem; }
+
+/* Estilos de la Galería de Ejecutivos con dos paneles */
+.ejecutivos-flex-layout {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start; /* Alinea los límites superiores */
+    gap: 15px;
+    width: 100%;
+    max-width: 400px;
+    margin-top: 10px;
+}
+
+.ejecutivos-col-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.ejecutivos-col-buttons {
+    flex: 1.2;
+}
+
+.gallery-title-white-inline {
+    font-family: 'Bebas Neue';
+    font-size: 1.8rem;
+    color: #ffffff;
+    margin: 0;
+    line-height: 1.1;
+    padding-bottom: 10px;
+    text-align: left;
+}
+
+.ejecutivo-photo-frame {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid var(--brand-accent);
+}
+
+.img-ejecutivo-file {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.gallery-title-white { width: 100%; text-align: left; padding: 0 10px; margin-bottom: 10px; font-family: 'Bebas Neue'; font-size: 2.2rem; color: #ffffff; }
+
+.content-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 5000; padding: 50px 15px 20px; overflow-y: auto; display: flex; flex-direction: column; align-items: center; }
+
+.quad-row-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; width: 100%; max-width: 350px; }
+.polaroid-item { background: #fff; padding: 5px 5px 15px; border-radius: 2px; box-shadow: 0 10px 20px rgba(0,0,0,0.3); transition: transform 0.3s; }
+.polaroid-item img { width: 100%; aspect-ratio: 1; object-fit: cover; }
+.pos-left { transform: rotate(-3deg); } .pos-right { transform: rotate(3deg); }
+
+.btn-premium-framed {
+    position: relative;
+    background: var(--premium-border); 
+    color: #fff;
+    border: none;
+    padding: 2px;
+    border-radius: 10px;
+    width: 100%;
+    margin-bottom: 8px;
+    font-weight: 900;
+    cursor: pointer;
+    overflow: hidden;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-premium-framed span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #000;
+    color: #fff;
+    padding: 12px 5px;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.btn-premium-framed:active { transform: scale(0.97); }
+
+.overlay-modal { position: fixed; inset: 0; background: rgba(0,0,0,0.98); z-index: 9000; display: flex; align-items: center; justify-content: center; }
+.zoom-premium-content { position: relative; width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center; }
+.zoom-image-wrapper { position: relative; display: inline-flex; align-items: center; justify-content: center; max-width: 95%; max-height: 75vh; }
+#lightbox-image { display: block; width: 100%; height: auto; max-height: 75vh; object-fit: contain; border: 3px solid #fff; border-radius: 10px; }
+
+.mini-logo-zoom-overlay { 
+    position: absolute; 
+    top: 15px; 
+    right: 15px; 
+    width: 35px; 
+    filter: drop-shadow(0 0 5px rgba(0,0,0,0.8)); 
+    z-index: 9001; 
+}
+
+.btn-nav-lightbox { background: rgba(0,0,0,0.5); color: #fff; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; position: absolute; top: 50%; transform: translateY(-50%); z-index: 9005; border: none; }
+.btn-prev { left: 10px; } .btn-next { right: 10px; }
+.hide-nav-arrows .btn-nav-lightbox { display: none !important; }
+
+.text-zoom-card { background: #fff; padding: 30px; border-radius: 20px; width: 90%; max-width: 400px; border-top: 10px solid var(--brand-accent); position: relative; }
+#text-zoom-title { font-family: 'Bebas Neue'; font-size: 1.8rem; color: var(--brand-accent); }
+#text-zoom-content { font-size: 1rem; line-height: 1.4; text-align: left; margin-top: 10px; }
+
+.social-vertical-stack { display: flex; flex-direction: column; gap: 5px; width: 100%; align-items: center; }
+
+.address-tag { color: #ffffff; font-size: 0.8rem; margin-bottom: 15px; text-align: center; font-weight: 600; }
+
+.btn-close-circular { position: absolute; top: 20px; right: 20px; background: #fff; color: #000; width: 45px; height: 45px; border-radius: 50%; border: none; font-size: 1.5rem; font-weight: 900; z-index: 10001; }
+
+.shine-effect::after { content: ''; position: absolute; top: -50%; left: -100%; width: 50%; height: 200%; background: rgba(255,255,255,0.15); transform: rotate(30deg); animation: shine 4s infinite; }
+@keyframes shine { 0% { left: -100%; } 20% { left: 150%; } 100% { left: 150%; } }
+
+.credits-altpro-compact { margin-top: 20px; padding: 10px; display: flex; flex-direction: column; align-items: center; gap: 5px; }
+.produced-by { font-size: 0.6rem; font-weight: 800; color: #999; text-transform: uppercase; }
+.altpro-link { background: #fff; border: 1.5px solid #25D366; color: #25D366; padding: 8px 20px; border-radius: 20px; font-weight: 900; text-decoration: none; font-size: 0.7rem; display: flex; align-items: center; gap: 5px; }
